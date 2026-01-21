@@ -1,0 +1,267 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Font Declarations */
+@font-face {
+    font-family: 'Futura Extra Bold';
+    src: local('Futura Extra Bold'), local('Futura-Extra-Bold');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Heavy';
+    src: local('SF Pro Heavy'), local('SFPro-Heavy');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.nav-link {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #000000;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    font-family: 'Futura Extra Bold', 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.0001em;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+}
+
+/* Gallery Section */
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.look {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.look:last-of-type {
+    margin-bottom: 0;
+}
+
+.look img {
+    width: calc(100% - 4rem);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+.caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 2rem 0;
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.caption-left {
+    flex: 1;
+}
+
+.product-name {
+    margin-bottom: 0.1rem;
+}
+
+.launch-date,
+.model-info,
+.size {
+    margin-bottom: 0.1rem;
+}
+
+.model-name {
+    text-align: right;
+    font-size: 0.7rem;
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 3rem 2rem 1rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-main {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 10.2rem;
+    letter-spacing: 0.000001em;
+    text-transform: uppercase;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.65rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .look {
+        margin-bottom: 3rem;
+    }
+
+    .look img {
+        width: calc(100% - 3rem);
+    }
+
+    .caption {
+        padding: 1rem 1.5rem 0;
+        font-size: 0.65rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        line-height: 1.4;
+    }
+
+    .model-name {
+        text-align: left;
+        font-size: 0.6rem;
+        margin-top: 0.5rem;
+    }
+
+    footer {
+        padding: 2rem 1.5rem 0.75rem 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .footer-main {
+        font-size: 3.5rem;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0.875rem 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.6rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .look {
+        margin-bottom: 2.5rem;
+    }
+
+    .look img {
+        width: calc(100% - 2rem);
+    }
+
+    .caption {
+        padding: 0.875rem 1rem 0;
+        font-size: 0.6rem;
+        line-height: 1.4;
+    }
+
+    .model-name {
+        font-size: 0.55rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem 0.5rem 1rem;
+        margin-top: 2.5rem;
+    }
+
+    .footer-main {
+        font-size: 2.5rem;
+        white-space: nowrap;
+    }
+}
+
