@@ -316,12 +316,12 @@ footer {
 .credits-title {
     font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
-    font-size: 10.2rem;
+    font-size: 8rem;
     letter-spacing: 0.000001em;
     text-transform: uppercase;
     color: #000000;
     text-align: center;
-    margin: 4rem 0 5rem;
+    margin: 4rem 0 4rem;
     white-space: nowrap;
     overflow: visible;
     width: 100%;
