@@ -7,6 +7,12 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a, button, input, textarea, select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 body {
@@ -18,6 +24,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     transition: opacity 0.4s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body.fade-out {
@@ -38,22 +45,7 @@ html {
     scrollbar-width: none;
 }
 
-/* Font Declarations */
-@font-face {
-    font-family: 'Futura Extra Bold';
-    src: local('Futura Extra Bold'), local('Futura-Extra-Bold');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SF Pro Heavy';
-    src: local('SF Pro Heavy'), local('SFPro-Heavy');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
+/* Font Declarations - Using web-safe fonts for consistency across all devices */
 
 /* Header Styles */
 header {
@@ -77,6 +69,9 @@ nav .nav-link:first-child {
     flex: 1 1 0;
     text-align: left;
     min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav .logo {
@@ -91,10 +86,13 @@ nav .nav-link:last-child {
     flex: 1 1 0;
     text-align: right;
     min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-link {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
@@ -102,6 +100,12 @@ nav .nav-link:last-child {
     text-decoration: underline;
     color: #000000;
     transition: opacity 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-link:hover {
@@ -109,8 +113,8 @@ nav .nav-link:last-child {
 }
 
 .logo {
-    font-family: 'Futura Extra Bold', 'Arial Black', sans-serif;
-    font-weight: 800;
+    font-family: 'Arial Black', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
     font-size: 1.5rem;
     letter-spacing: 0.0001em;
     text-transform: uppercase;
@@ -158,7 +162,7 @@ main {
     justify-content: space-between;
     align-items: flex-start;
     padding: 1.5rem 2rem 0;
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -196,7 +200,7 @@ footer {
 }
 
 .footer-main {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 10.2rem;
     letter-spacing: 0.000001em;
@@ -205,6 +209,44 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* iPad and Tablet Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .credits-title {
+        font-size: 4rem;
+        margin: 3rem auto 4rem;
+        white-space: normal;
+        padding: 0 2rem;
+        letter-spacing: -0.01em;
+        overflow: visible;
+        text-align: center;
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        word-break: break-word;
+        line-height: 1.1;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-main {
+        font-size: 5rem;
+        white-space: nowrap;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /* Responsive Design */
@@ -252,6 +294,12 @@ footer {
     .footer-main {
         font-size: 3.5rem;
         white-space: nowrap;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -295,6 +343,12 @@ footer {
     .footer-main {
         font-size: 2.5rem;
         white-space: nowrap;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -314,14 +368,14 @@ footer {
 }
 
 .credits-title {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 8rem;
     letter-spacing: 0.000001em;
     text-transform: uppercase;
     color: #000000;
     text-align: center;
-    margin: 4rem 0 5rem;
+    margin: 4rem auto 5rem;
     white-space: nowrap;
     overflow: visible;
     width: 100%;
@@ -331,8 +385,9 @@ footer {
     word-break: keep-all;
     line-height: 1;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .credits-container {
@@ -373,7 +428,7 @@ footer {
 }
 
 .credits-column-left p {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -384,7 +439,7 @@ footer {
 }
 
 .credits-column-center p {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
     letter-spacing: 0.02em;
@@ -395,7 +450,7 @@ footer {
 }
 
 .credits-column-right p {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -411,7 +466,7 @@ footer {
 }
 
 .credits-footer-text p {
-    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 900;
     font-size: 0.85rem;
     letter-spacing: 0.02em;
@@ -428,17 +483,20 @@ footer {
 
     .credits-title {
         font-size: 2rem;
-        margin: 2rem 0 3rem;
+        margin: 2rem auto 3rem;
         white-space: normal;
         padding: 0 1.5rem;
         letter-spacing: -0.02em;
         overflow: visible;
         text-align: center;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         word-break: break-word;
         line-height: 1.1;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .credits-content {
@@ -478,18 +536,21 @@ footer {
     }
 
     .credits-title {
-        font-size: 3rem;
-        margin: 1.5rem 0 2rem;
+        font-size: 2.5rem;
+        margin: 1.5rem auto 2rem;
         white-space: normal;
         padding: 0 1rem;
         letter-spacing: -0.02em;
         overflow: visible;
         text-align: center;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         word-break: break-word;
         line-height: 1.1;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .credits-content {
