@@ -17,6 +17,15 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+body.fade-in {
+    opacity: 1;
 }
 
 /* Hide Scrollbar */
@@ -61,6 +70,27 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
+    position: relative;
+}
+
+nav .nav-link:first-child {
+    flex: 1 1 0;
+    text-align: left;
+    min-width: 0;
+}
+
+nav .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+    pointer-events: none;
+}
+
+nav .nav-link:last-child {
+    flex: 1 1 0;
+    text-align: right;
+    min-width: 0;
 }
 
 .nav-link {
@@ -109,7 +139,8 @@ main {
     margin-bottom: 0;
 }
 
-.look img {
+.look img,
+.look video {
     width: calc(100% - 4rem);
     max-width: 100%;
     height: auto;
@@ -194,7 +225,8 @@ footer {
         margin-bottom: 3rem;
     }
 
-    .look img {
+    .look img,
+    .look video {
         width: calc(100% - 3rem);
     }
 
@@ -240,7 +272,8 @@ footer {
         margin-bottom: 2.5rem;
     }
 
-    .look img {
+    .look img,
+    .look video {
         width: calc(100% - 2rem);
     }
 
@@ -262,6 +295,242 @@ footer {
     .footer-main {
         font-size: 2.5rem;
         white-space: nowrap;
+    }
+}
+
+/* Credits Page Styles */
+.page-credits {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.credits-main {
+    width: 100%;
+    padding: 2rem 2rem 4rem;
+    min-height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.credits-title {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 10.2rem;
+    letter-spacing: 0.000001em;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+    margin: 4rem 0 5rem;
+    white-space: nowrap;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    word-break: keep-all;
+    line-height: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credits-container {
+    width: 100%;
+    position: relative;
+}
+
+.credits-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 4rem 6rem;
+    margin-bottom: 4rem;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.credits-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.credits-column-left {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.credits-column-center {
+    text-align: center;
+    align-items: center;
+}
+
+.credits-column-right {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.credits-column-left p {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.credits-column-center p {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.credits-column-right p {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.credits-footer-text {
+    text-align: center;
+    margin: 5rem 0 4rem;
+}
+
+.credits-footer-text p {
+    font-family: 'SF Pro Heavy', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+/* Credits Page Responsive */
+@media screen and (max-width: 768px) {
+    .credits-main {
+        padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .credits-title {
+        font-size: 3rem;
+        margin: 2rem 0 3rem;
+        white-space: normal;
+        padding: 0 1.5rem;
+        letter-spacing: -0.02em;
+        overflow: visible;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        word-break: break-word;
+        line-height: 1.1;
+    }
+
+    .credits-content {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 2rem 3rem;
+        margin-bottom: 2rem;
+        padding: 0 1.5rem;
+    }
+
+    .credits-column-left p {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+    
+    .credits-column-center p {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .credits-column-right p {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+
+    .credits-footer-text {
+        margin: 3rem 0 2rem;
+    }
+
+    .credits-footer-text p {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .credits-main {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .credits-title {
+        font-size: 2rem;
+        margin: 1.5rem 0 2rem;
+        white-space: normal;
+        padding: 0 1rem;
+        letter-spacing: -0.02em;
+        overflow: visible;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        word-break: break-word;
+        line-height: 1.1;
+    }
+
+    .credits-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .credits-column-left,
+    .credits-column-center,
+    .credits-column-right {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .credits-column-left p {
+        font-size: 0.6rem;
+        line-height: 1.3;
+    }
+    
+    .credits-column-center p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .credits-column-right p {
+        font-size: 0.6rem;
+        line-height: 1.3;
+    }
+
+    .credits-footer-text {
+        margin: 2rem 0 1.5rem;
+    }
+    
+    .credits-footer-text p {
+        font-size: 0.7rem;
+    }
+
+    .credits-footer-text p {
+        font-size: 0.55rem;
     }
 }
 

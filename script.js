@@ -51,3 +51,44 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', playMusic);
 });
 
+// Page fade transition
+document.addEventListener('DOMContentLoaded', function() {
+    const creditLink = document.getElementById('credit-link');
+    const galleryLink = document.getElementById('gallery-link');
+    
+    // Fade transition for credit link
+    if (creditLink) {
+        creditLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            
+            // Fade out
+            document.body.classList.add('fade-out');
+            
+            // Navigate after fade
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 400);
+        });
+    }
+    
+    // Fade transition for gallery link
+    if (galleryLink) {
+        galleryLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            
+            // Fade out
+            document.body.classList.add('fade-out');
+            
+            // Navigate after fade
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 400);
+        });
+    }
+    
+    // Fade in on page load
+    document.body.classList.add('fade-in');
+});
+
