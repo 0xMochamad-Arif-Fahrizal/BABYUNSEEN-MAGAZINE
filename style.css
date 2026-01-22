@@ -66,12 +66,13 @@ nav {
 }
 
 nav .nav-link:first-child {
-    flex: 1 1 0;
+    flex: 0 0 auto;
     text-align: left;
     min-width: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: fit-content;
 }
 
 nav .logo {
@@ -83,12 +84,13 @@ nav .logo {
 }
 
 nav .nav-link:last-child {
-    flex: 1 1 0;
+    flex: 0 0 auto;
     text-align: right;
     min-width: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: fit-content;
 }
 
 .nav-link {
@@ -103,9 +105,11 @@ nav .nav-link:last-child {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     display: inline-block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: fit-content;
+    overflow: visible;
+    text-overflow: clip;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-link:hover {
@@ -202,13 +206,12 @@ footer {
 .footer-main {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 700;
-    font-size: 10.2rem;
+    font-size: 9rem;
     letter-spacing: 0.000001em;
     text-transform: uppercase;
     color: #000000;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
     text-align: center;
     width: 100%;
     display: block;
@@ -220,26 +223,25 @@ footer {
 /* iPad and Tablet Styles */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .credits-title {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
         margin: 3rem auto 4rem;
-        white-space: normal;
-        padding: 0 3rem;
+        white-space: nowrap;
+        padding: 0 4rem;
         letter-spacing: -0.01em;
         overflow: visible;
         text-align: center;
         display: block;
+        line-height: 1;
+        width: 100%;
+        box-sizing: border-box;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        word-break: break-word;
-        line-height: 1.1;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .footer-main {
-        font-size: 4.5rem;
-        white-space: normal;
+        font-size: 3rem;
+        white-space: nowrap;
         text-align: center;
         position: relative;
         left: 50%;
@@ -247,7 +249,7 @@ footer {
         width: 100%;
         box-sizing: border-box;
         padding: 0 2rem;
-        word-break: break-word;
+        overflow: visible;
     }
 }
 
@@ -295,7 +297,7 @@ footer {
     }
 
     .footer-main {
-        font-size: 3.5rem;
+        font-size: 3rem;
         white-space: nowrap;
         text-align: center;
         position: relative;
@@ -303,6 +305,7 @@ footer {
         transform: translateX(-50%);
         width: 100%;
         box-sizing: border-box;
+        overflow: visible;
     }
 }
 
@@ -345,7 +348,7 @@ footer {
     }
 
     .footer-main {
-        font-size: 2.5rem;
+        font-size: 1rem;
         white-space: nowrap;
         text-align: center;
         position: relative;
@@ -353,6 +356,7 @@ footer {
         transform: translateX(-50%);
         width: 100%;
         box-sizing: border-box;
+        overflow: visible;
     }
 }
 
@@ -361,6 +365,12 @@ footer {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100vh;
+}
+
+.page-credits header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .credits-main {
@@ -374,7 +384,7 @@ footer {
 .credits-title {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 700;
-    font-size: 8rem;
+    font-size: 9rem;
     letter-spacing: 0.000001em;
     text-transform: uppercase;
     color: #000000;
@@ -386,7 +396,6 @@ footer {
     max-width: 100%;
     box-sizing: border-box;
     padding: 0 2rem;
-    word-break: keep-all;
     line-height: 1;
     display: block;
     position: relative;
@@ -488,7 +497,7 @@ footer {
     .credits-title {
         font-size: 2rem;
         margin: 2rem auto 3rem;
-        white-space: normal;
+        white-space: nowrap;
         padding: 0 1.5rem;
         letter-spacing: -0.02em;
         overflow: visible;
@@ -497,8 +506,7 @@ footer {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        word-break: break-word;
-        line-height: 1.1;
+        line-height: 1;
         width: 100%;
         box-sizing: border-box;
     }
@@ -541,21 +549,20 @@ footer {
     }
 
     .credits-title {
-        font-size: 2.5rem;
+        font-size: 1rem;
         margin: 1.5rem auto 2rem;
-        white-space: normal;
+        white-space: nowrap;
         padding: 0 1rem;
         letter-spacing: -0.02em;
         overflow: visible;
         text-align: center;
         display: block;
+        line-height: 1;
+        width: 100%;
+        box-sizing: border-box;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        word-break: break-word;
-        line-height: 1.1;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .credits-content {
