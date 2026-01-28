@@ -51,6 +51,54 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', playMusic);
 });
 
+// Video autoplay helper (some browsers block autoplay unless we explicitly call play() and/or wait for interaction)
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = Array.from(document.querySelectorAll('video[autoplay]'));
+    if (!videos.length) return;
+
+    const tryPlayVideos = () => {
+        videos.forEach(video => {
+            try {
+                // Ensure autoplay requirements
+                video.muted = true;
+                video.playsInline = true;
+                video.setAttribute('muted', '');
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+
+                const p = video.play();
+                if (p && typeof p.catch === 'function') {
+                    p.catch(() => {
+                        // ignored: will retry on user interaction
+                    });
+                }
+            } catch (_) {
+                // ignored
+            }
+        });
+    };
+
+    // Try immediately and again on full load (helps Safari)
+    tryPlayVideos();
+    window.addEventListener('load', tryPlayVideos);
+
+    // Retry once on first user interaction if autoplay was blocked
+    const retryOnInteraction = () => {
+        tryPlayVideos();
+        document.removeEventListener('click', retryOnInteraction);
+        document.removeEventListener('touchstart', retryOnInteraction);
+        window.removeEventListener('scroll', retryOnInteraction);
+        window.removeEventListener('wheel', retryOnInteraction);
+        window.removeEventListener('touchmove', retryOnInteraction);
+    };
+
+    document.addEventListener('click', retryOnInteraction);
+    document.addEventListener('touchstart', retryOnInteraction);
+    window.addEventListener('scroll', retryOnInteraction);
+    window.addEventListener('wheel', retryOnInteraction);
+    window.addEventListener('touchmove', retryOnInteraction);
+});
+
 // Page fade transition
 document.addEventListener('DOMContentLoaded', function() {
     const creditLink = document.getElementById('credit-link');
