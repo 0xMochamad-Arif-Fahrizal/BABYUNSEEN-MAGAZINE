@@ -16,7 +16,7 @@ a, button, input, textarea, select {
 }
 
 body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
@@ -94,7 +94,7 @@ nav .nav-link:last-child {
 }
 
 .nav-link {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
@@ -117,7 +117,7 @@ nav .nav-link:last-child {
 }
 
 .logo {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: 0.0001em;
@@ -166,7 +166,7 @@ main {
     justify-content: space-between;
     align-items: flex-start;
     padding: 1.5rem 2rem 0;
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -204,9 +204,9 @@ footer {
 }
 
 .footer-main {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
-    font-size: 9rem;
+    font-size: 1rem;
     letter-spacing: 0.000001em;
     text-transform: uppercase;
     color: #000000;
@@ -240,7 +240,7 @@ footer {
     }
 
     .footer-main {
-        font-size: 3rem;
+        font-size: 1rem;
         white-space: nowrap;
         text-align: center;
         position: relative;
@@ -256,7 +256,7 @@ footer {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     header {
-        padding: 1rem 1.5rem;
+        padding: 1.5rem 2rem;
     }
 
     .nav-link {
@@ -297,7 +297,7 @@ footer {
     }
 
     .footer-main {
-        font-size: 3rem;
+        font-size: 1rem;
         white-space: nowrap;
         text-align: center;
         position: relative;
@@ -311,7 +311,7 @@ footer {
 
 @media screen and (max-width: 480px) {
     header {
-        padding: 0.875rem 1rem;
+        padding: 1.5rem 2rem;
     }
 
     .nav-link {
@@ -348,7 +348,7 @@ footer {
     }
 
     .footer-main {
-        font-size: 2rem;
+        font-size: 1rem;
         white-space: nowrap;
         text-align: center;
         position: relative;
@@ -385,7 +385,7 @@ footer {
 }
 
 .credits-title {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 9rem;
     letter-spacing: 0.000001em;
@@ -444,7 +444,7 @@ footer {
 }
 
 .credits-column-left p {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -455,7 +455,7 @@ footer {
 }
 
 .credits-column-center p {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: 0.02em;
@@ -466,7 +466,7 @@ footer {
 }
 
 .credits-column-right p {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -482,7 +482,7 @@ footer {
 }
 
 .credits-footer-text p {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.02em;
